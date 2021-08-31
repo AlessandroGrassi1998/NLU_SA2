@@ -451,7 +451,10 @@ for doc in sentiments_predicted_text:
 
 print(classification_report(sentiments, sentiments_predicted))
 
-"""This second approach takes into account of the actual value of the score given by VADER and sum all of them to get a final score for all positive contribution and negative contribution. If the summed positive scores is greater than the summed negative the review is considered as positive."""
+"""This second approach takes into account of the actual value of the score given by VADER and sum all of them to get a final score for all positive contribution and negative contribution. If the summed positive scores is greater than the summed negative the review is considered as positive.
+
+This approach allows me to not account for objective sentences, because objective sentences have very low positve and negative values, actually giving poor contribution to the classification, hence a great bust in performance with respect the previous attempt with V.A.D.E.R.
+"""
 
 sentiments_predicted = []
 for doc in scores_predicted:
